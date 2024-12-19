@@ -1,4 +1,4 @@
-package com.reactnativebase
+package com.savefood.text
 
 import android.app.Application
 import com.facebook.react.PackageList

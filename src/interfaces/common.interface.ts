@@ -1,4 +1,4 @@
-import {JP_RESOURCE} from 'localization/locales/ja';
+import {EN_RESOURCE} from 'localization/locales/en';
 import {SvgProps} from 'react-native-svg';
 
 export type IconProps = SvgProps & {
@@ -76,7 +76,7 @@ export type TObjectKeyPaths<
   : never;
 
 export type TKeyTranslation = TLiteralUnion<
-  TObjectKeyPaths<typeof JP_RESOURCE>
+  TObjectKeyPaths<typeof EN_RESOURCE>
 >;
 
 // Define a generic function to get the type of an array property

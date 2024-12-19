@@ -69,7 +69,7 @@ export const AppHeader = (props: AppheaderProps) => {
               {iconReturn ? (
                 iconReturn
               ) : (
-                <Icons.ArrowLeft
+                <Icons.ArrowBack
                   color={mode === 'dark' ? colors.neutralColor1 : colors.white}
                 />
               )}

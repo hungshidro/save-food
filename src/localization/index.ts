@@ -3,7 +3,7 @@ import {initReactI18next} from 'react-i18next';
 import * as RNLocalize from 'react-native-localize';
 
 import {ECountryCode} from 'enums';
-import {JP_RESOURCE} from './locales/ja';
+import {EN_RESOURCE} from './locales/en';
 // import {EN_RESOURCE} from './locales/en';
 const arrLangs: string[] = [];
 type languageDetectorType = {
@@ -23,11 +23,11 @@ type languageDetectorType = {
 
 const getLocalize = async (callback: any) => {
   const localize = await RNLocalize.getLocales();
-  const str = localize?.[0]?.languageCode || ECountryCode.JA;
+  const str = localize?.[0]?.languageCode || ECountryCode.EN;
   if (arrLangs.includes(str)) {
     callback(str);
   } else {
-    callback(ECountryCode.JA);
+    callback(ECountryCode.EN);
   }
 };
 
@@ -47,12 +47,12 @@ const initI18n = () => {
     .use(initReactI18next)
     .init({
       compatibilityJSON: 'v3',
-      fallbackLng: ECountryCode.JA,
-      lng: ECountryCode.JA,
+      fallbackLng: ECountryCode.EN,
+      lng: ECountryCode.EN,
       debug: true,
       resources: {
-        // en: {translation: EN_RESOURCE},
-        ja: {translation: JP_RESOURCE},
+        en: {translation: EN_RESOURCE},
+        ja: {translation: EN_RESOURCE},
       },
     });
 };

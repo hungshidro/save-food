@@ -1,11 +1,11 @@
 import {AppContainer, AppText} from 'components';
 import React from 'react';
-import {useRootScreen} from './useRootScreen.hook';
+import {useExploreScreen} from './useExploreScreen.hook';
 import {colors, getSize} from 'themes';
 import {RefreshControl, StyleSheet} from 'react-native';
 
-export const RootScreen = () => {
-  const {refreshing, onRefresh} = useRootScreen();
+export const ExploreScreen = () => {
+  const {refreshing, onRefresh} = useExploreScreen();
 
   return (
     <AppContainer
@@ -15,9 +15,9 @@ export const RootScreen = () => {
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
       statusBarProps={{backgroundColor: colors.white}}
-      headerShown={true}
-      containerStyle={styles.container}>
-      <AppText>Root Screen content</AppText>
+      containerStyle={styles.container}
+      title={'ExploreScreen'}>
+      <AppText>Explore Screen content</AppText>
     </AppContainer>
   );
 };

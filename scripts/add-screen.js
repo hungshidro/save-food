@@ -104,7 +104,7 @@ const modifyScreenConfig = screenName => {
   );
   const newRouteParamsImport =
     newRouteStack.slice(0, newRouteParamsImportIndex) +
-    `I${capitalizeName}ScreenParams\n` +
+    `I${capitalizeName}ScreenParams,\n` +
     newRouteStack.slice(newRouteParamsImportIndex);
   fs.writeFileSync(rootStackParamListPath, newRouteParamsImport);
 
@@ -127,7 +127,7 @@ const modifyScreenConfig = screenName => {
   const newImportIndex = newStack.indexOf(importPattern);
   const newImport =
     newStack.slice(0, newImportIndex) +
-    `${capitalizeName}Screen\n` +
+    `${capitalizeName}Screen,\n` +
     newStack.slice(newImportIndex);
   fs.writeFileSync(mainStackPath, newImport);
 };

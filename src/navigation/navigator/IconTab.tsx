@@ -1,13 +1,8 @@
+import {IAppIcon} from 'assets';
 import React from 'react';
 import {useMemo} from 'react';
-import {
-  Image,
-  ImageSourcePropType,
-  ImageStyle,
-  StyleProp,
-  StyleSheet,
-} from 'react-native';
-import {getSize} from 'themes';
+import {ImageStyle, StyleProp} from 'react-native';
+import {colors, getSize} from 'themes';
 
 export const IconTab = ({
   listIcon,
@@ -17,24 +12,16 @@ export const IconTab = ({
   index,
 }: {
   focus: boolean;
-  listIcon: ImageSourcePropType[];
-  listIconFocus: ImageSourcePropType[];
+  listIcon: IAppIcon[];
+  listIconFocus: IAppIcon[];
   style?: StyleProp<ImageStyle>;
   index: number;
 }) => {
-  const icon = useMemo(() => listIcon[index], [listIcon, index]);
-  const iconFocus = useMemo(() => listIconFocus[index], [listIconFocus, index]);
-  return (
-    <Image
-      source={focus ? iconFocus : icon}
-      style={[styles.container, style]}
-    />
+  const Icon = useMemo(() => listIcon[index], [listIcon, index]);
+  const IconFocus = useMemo(() => listIconFocus[index], [listIconFocus, index]);
+  return focus ? (
+    <IconFocus size={getSize(24)} style={style} color={colors.black} />
+  ) : (
+    <Icon size={getSize(24)} style={style} />
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    height: getSize(24),
-    width: getSize(24),
-  },
-});

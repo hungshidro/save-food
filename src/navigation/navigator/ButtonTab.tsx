@@ -45,13 +45,7 @@ export const ButtonTab = ({
   const isFocused = state.index === index;
   const isEN = i18next.language === ECountryCode.EN;
   const {t} = useAppTranslation();
-  const arrayLable = [
-    t('tab.community'),
-    t('tab.habit'),
-    t('tab.retreat'),
-    t('tab.education'),
-    t('tab.profile'),
-  ];
+  const arrayLabel = [t('home'), t('explore'), t('random'), t('settings')];
 
   //state true: set backgroung button to black, else white
   const [backgroundFocus, setBackgroundFocus] = useState(false);
@@ -159,7 +153,7 @@ export const ButtonTab = ({
                   opacity: opacity.value,
                 },
               ]}>
-              {arrayLable[index]}
+              {arrayLabel[index]}
             </AppText>
           )}
         </Animated.View>
@@ -200,7 +194,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: getSize(18),
     letterSpacing: getSize(0.07),
-    color: colors.primary,
+    color: colors.white,
     marginLeft: getSize(12),
   },
   titleBlur: {
@@ -213,6 +207,6 @@ const styles = StyleSheet.create({
     marginLeft: getSize(12),
   },
   buttonFocus: {
-    backgroundColor: colors.primary2,
+    backgroundColor: colors.neutralColor3,
   },
 });

@@ -1,3 +1,4 @@
+import {Icons} from 'assets';
 import {Platform} from 'react-native';
 
 export const PUSH_NOTIFICATION_CONFIG = {
@@ -65,3 +66,16 @@ export const DATE_FORMAT = {
   HH_MM_SS: 'HH:mm:ss',
   DD_MM_YYYY: 'DD/MM/YYYY',
 };
+
+export const LIST_ICON_TAB_ACTIVE = [
+  Icons.Home,
+  Icons.Search,
+  Icons.GameController,
+  Icons.Setting,
+];
+export const LIST_ICON_TAB = [
+  Icons.Home,
+  Icons.Search,
+  Icons.GameController,
+  Icons.Setting,
+];
