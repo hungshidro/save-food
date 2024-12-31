@@ -18,13 +18,14 @@ export type AppheaderProps = {
   absolute?: boolean;
   mode?: 'light' | 'dark';
   iconReturn?: React.ReactNode;
-  returnEnabled?: boolean;
+  showLeading?: boolean;
   onReturn?: () => void;
   iconRight?: React.ReactNode;
   onClickRight?: () => void;
   statusBarProps?: StatusBarProps;
   headerShown?: boolean;
   leading?: React.ReactNode;
+  titleCenter?: boolean;
 };
 
 export const AppHeader = (props: AppheaderProps) => {
@@ -35,13 +36,14 @@ export const AppHeader = (props: AppheaderProps) => {
     absolute,
     mode = 'dark',
     iconReturn,
-    returnEnabled = true,
+    showLeading = true,
     onReturn,
     iconRight,
     onClickRight,
     statusBarProps,
     headerShown,
     leading,
+    titleCenter,
   } = props;
 
   // useEffect(() => {
@@ -49,7 +51,7 @@ export const AppHeader = (props: AppheaderProps) => {
   // }, [mode]);
 
   const onClickReturn = () => {
-    if (returnEnabled && onReturn) {
+    if (showLeading && onReturn) {
       onReturn();
       return;
     }
@@ -59,8 +61,13 @@ export const AppHeader = (props: AppheaderProps) => {
   return (
     <>
       {headerShown && (
-        <View style={[styles.container, absolute && styles.absoluteContainer]}>
-          {!returnEnabled ? (
+        <View
+          style={[
+            styles.container,
+            absolute && styles.absoluteContainer,
+            titleCenter && styles.center,
+          ]}>
+          {!showLeading ? (
             <View style={styles.viewLeft} />
           ) : leading ? (
             leading
@@ -71,6 +78,7 @@ export const AppHeader = (props: AppheaderProps) => {
               ) : (
                 <Icons.ArrowBack
                   color={mode === 'dark' ? colors.neutralColor1 : colors.white}
+                  size={getSize(28)}
                 />
               )}
             </TouchableOpacity>
@@ -106,6 +114,10 @@ const styles = StyleSheet.create({
     // marginTop: getSize(16),
     // paddingHorizontal: getSize(16),
     padding: getSize(16),
+    alignItems: 'center',
+  },
+  center: {
+    justifyContent: 'space-between',
   },
   absoluteContainer: {
     position: 'absolute',
@@ -125,7 +137,6 @@ const styles = StyleSheet.create({
   },
   viewLeft: {
     width: getSize(32),
-    height: getSize(32),
   },
   viewRight: {
     width: getSize(32),

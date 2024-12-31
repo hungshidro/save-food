@@ -34,7 +34,7 @@ export const AppContainer = (props: AppContainerProps) => {
     mode,
     statusBarProps,
     onReturn,
-    returnEnabled,
+    showLeading,
     onClickRight,
     closeInputOnTouch,
     renderDrawerContent,
@@ -42,6 +42,7 @@ export const AppContainer = (props: AppContainerProps) => {
     alignDrawer,
     onCloseDrawer,
     headerFixed = true,
+    titleCenter,
     ...otherProps
   } = props;
   const inset = useSafeAreaInsets();
@@ -65,9 +66,10 @@ export const AppContainer = (props: AppContainerProps) => {
         mode={mode}
         onReturn={onReturn}
         headerShown={headerShown}
-        returnEnabled={returnEnabled}
+        showLeading={showLeading}
         onClickRight={onClickRight}
         statusBarProps={statusBarProps}
+        titleCenter={titleCenter}
       />
     );
   };

@@ -22,6 +22,7 @@ import {
   GameControllerFilled,
   HomeFilled,
   SettingFilled,
+  ChevronForward,
 } from './icon_svg';
 import {IconProps} from 'interfaces';
 
@@ -52,6 +53,7 @@ Icons.Trash = Trash;
 Icons.GameControllerFilled = GameControllerFilled;
 Icons.HomeFilled = HomeFilled;
 Icons.SettingFilled = SettingFilled;
+Icons.ChevronForward = ChevronForward;
 
 export const icons = {
   iconEyeClose,

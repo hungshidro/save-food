@@ -15,7 +15,10 @@ export const TabNavigator = () => {
   };
 
   return (
-    <Tab.Navigator tabBar={renderTab} screenOptions={{headerShown: false}}>
+    <Tab.Navigator
+      backBehavior="firstRoute"
+      tabBar={renderTab}
+      screenOptions={{headerShown: false}}>
       <Tab.Screen name={RouteName.HOME} component={HomeScreen} />
       <Tab.Screen name={RouteName.SEARCH} component={ExploreScreen} />
       <Tab.Screen name={RouteName.RANDOM} component={RandomScreen} />

@@ -81,7 +81,7 @@ export const ButtonTab = ({
       delay: 400,
     }).start();
     setTimeout(() => setBackgroundFocus(true), 50);
-    setTimeout(() => setShowTextFocus(true), index === 1 ? 750 : 700);
+    setTimeout(() => setShowTextFocus(true), 700);
   };
   const onBlur = () => {
     Animated.timing(animatedValue.current, {
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     color: colors.black,
   },
   iconFocus: {
-    tintColor: colors.primary,
+    tintColor: colors.neutralColor4,
   },
   iconBlur: {
     marginLeft: getSize(12),

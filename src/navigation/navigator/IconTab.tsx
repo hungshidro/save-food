@@ -20,8 +20,8 @@ export const IconTab = ({
   const Icon = useMemo(() => listIcon[index], [listIcon, index]);
   const IconFocus = useMemo(() => listIconFocus[index], [listIconFocus, index]);
   return focus ? (
-    <IconFocus size={getSize(24)} style={style} color={colors.black} />
+    <IconFocus size={getSize(24)} style={style} color={colors.neutralColor5} />
   ) : (
-    <Icon size={getSize(24)} style={style} />
+    <Icon size={getSize(24)} style={style} color={colors.black} />
   );
 };

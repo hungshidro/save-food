@@ -1,4 +1,4 @@
-import {AppContainer, AppText} from 'components';
+import {AnimatedList, AppContainer, AppText} from 'components';
 import React from 'react';
 import {useExploreScreen} from './useExploreScreen.hook';
 import {colors, getSize} from 'themes';
@@ -10,14 +10,15 @@ export const ExploreScreen = () => {
   return (
     <AppContainer
       backgroundColor={colors.white}
-      scrollable
-      refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }
+      scrollable={false}
+      // refreshControl={
+      //   <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      // }
       statusBarProps={{backgroundColor: colors.white}}
       containerStyle={styles.container}
       title={'ExploreScreen'}>
       <AppText>Explore Screen content</AppText>
+      <AnimatedList />
     </AppContainer>
   );
 };
